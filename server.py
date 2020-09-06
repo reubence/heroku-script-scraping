@@ -11,7 +11,7 @@ start_date = datetime.date(year=2020, month=8, day=1)
 end_date = datetime.date(year=2020, month=8, day=31)
 df = pd.read_csv('data/Page Rank Handles.csv', encoding='cp1252')
 handles = df['Insta Handle'].dropna().tolist()
-
+#s
 rows = []
 for handle in handles[49:]:
     print(handle)
