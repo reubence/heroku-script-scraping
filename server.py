@@ -10,8 +10,7 @@ from spacy.lang.en import English
 import gspread
 nltk.download('punkt')
 gc = gspread.service_account(filename='data/sheets-json-secret-key.json')
-sh = gc.open_by_url(
-    'https://docs.google.com/spreadsheets/d/15dA7G6TQozLCQHC6_42aJFz7gmid06Ktm4cRKUn90xs/edit?usp=sharing')
+sh = gc.open_by_url('https://docs.google.com/spreadsheets/d/1pNg9FxXvoEHcE3QyyHKAn60hlg6WP69kAK3GXia1tQU/edit?usp=sharing')
 
 emoticons_sad = {':L', ':-/', '>:/', ':S', '>:[', ':@', ':-(', ':[', ':-||', '=L', ':<', ':-[', ':-<', '=\\', '=/',
                  '>:(', ':(', '>.<', ":'-(", ":'(", ':\\', ':-c', ':c', ':{', '>:\\', ';('}
@@ -135,7 +134,6 @@ for handle in handles:
                 elif senti == 0:  # negative
                     neg_comments += 1
         total_posts += 1
-        break
     # print(handle, total_likes, pos_comments, neg_comments, total_comments, total_posts, num_followers)
     rows.append([handle, total_likes, pos_comments, neg_comments, total_comments, total_posts, num_followers])
 insta = pd.DataFrame(rows,
